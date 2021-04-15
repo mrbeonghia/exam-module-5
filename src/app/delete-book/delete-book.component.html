@@ -1,0 +1,114 @@
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Book management</title>
+
+  <style type="text/css">
+    h3 {
+      background-color: blue;
+      color: white;
+      padding: 10px 0 10px 20px;
+    }
+
+    footer {
+      margin: 10px 0;
+    }
+
+    #books {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #books td, #books th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #books tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #books tr:hover {
+      background-color: #ddd;
+    }
+
+    #books th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    input[type=text], input[type=email] {
+      width: 100%;
+      padding: 12px 0px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 300px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    #form {
+      width: 500px;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .notify span {
+      font-size: 15px;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+<h1>Thông tin sách</h1>
+<br/>
+<br/>
+
+<table id="books" border="1">
+  <thead>
+  <tr>
+    <th>Tên Sách</th>
+    <th>Tác Giả</th>
+    <th>Mô Tả</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{book.title}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.description}}</td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<div class="row">
+  <button class="btn btn-primary" (click)="deleteBook()" style="margin-right: 10px">Xoá</button>
+  <button class="btn btn-success" [routerLink]="'/'">Thoát</button>
+</div>
+
+</body>
+
+
